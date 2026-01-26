@@ -90,6 +90,15 @@ jobs:
       - name: Publish to VS Code Marketplace
         run: npx @vscode/vsce publish -p ${{ secrets.VSCE_PAT }}
         
+      - name: Upload VSIX to Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.vsix"
+          tag_name: ${{ github.event.release.tag_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
       - name: Update version and create tag for manual dispatch
         if: github.event_name == 'workflow_dispatch'
         run: |
