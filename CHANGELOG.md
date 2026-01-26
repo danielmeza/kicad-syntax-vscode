@@ -2,6 +2,10 @@
 
 All notable changes to the "KiCad Syntax Highlighter" extension will be documented in this file.
 
+## [0.0.2 - 0.0.3]
+### Configure VSXI 
+Changes in the VSXI package to preserve it realse and reduce min require version to 1.95
+
 ## [0.0.1] - 2025-05-13
 
 ### Added
