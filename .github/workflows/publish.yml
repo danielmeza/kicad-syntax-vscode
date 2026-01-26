@@ -75,16 +75,6 @@ jobs:
             VERSION="${TAG_NAME#v}"
             # Update package.json with the version from git tag
             npm version $VERSION --no-git-tag-version --allow-same-version
-            
-            # Configure git
-            git config --global user.name "GitHub Actions"
-            git config --global user.email "actions@github.com"
-            
-            # Commit and push package.json changes
-            git add package.json
-            git commit -m "Update version to ${VERSION} from release tag"
-            git push
-            
             echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
           else
             # For manual dispatch, use the version from package.json
