@@ -4,7 +4,7 @@
   "description": "A VS Code extension to highlight KiCad schematic and board files using s-expression syntax.",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.99.0"
+    "vscode": "^1.95.0"
   },
   "categories": [
     "Programming Languages"
